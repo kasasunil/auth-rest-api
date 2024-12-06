@@ -1,0 +1,10 @@
+# Use the official PostgreSQL image
+FROM postgres
+
+# Set environment variables for PostgreSQL
+ENV POSTGRES_USER=sunil
+ENV POSTGRES_PASSWORD=password
+ENV POSTGRES_DB=postgresdb
+
+# Start PostgreSQL server
+CMD ["postgres", "-p", "5432"]
