@@ -14,6 +14,11 @@ func InitializeRoutes(con *controllers.Controller, rtm *revoked_tokens.RevokedTo
 }
 
 func setupRoutes(router *gin.Engine, con *controllers.Controller, rtm *revoked_tokens.RevokedToken) {
+	router.GET("/", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "Welcome to Auth REST API",
+		})
+	})
 	publicGroup := router.Group("public")
 	publicGroup.POST("/signup", con.Signup)
 	publicGroup.POST("/signin", con.Signin)

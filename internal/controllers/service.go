@@ -72,8 +72,6 @@ func (con *Controller) Signin(c *gin.Context) {
 		return
 	}
 
-	// TODO: IF token already exists and valid, then don't generate new one. Just return the existing one.
-
 	// Generate JWT token
 	token, err := jwt.CreateJWTToken(user.Email)
 	if err != nil {

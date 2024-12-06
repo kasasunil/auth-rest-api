@@ -25,7 +25,6 @@ func New(db *database.Db) *User {
 }
 
 func (u *User) CreateUser(user *UserModel) error {
-	// TODO: Try to hash password if possible
 	result := u.db.Db.Create(user)
 	if result.Error != nil {
 		log.Println("User creation failed: ", result.Error)
